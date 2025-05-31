@@ -15,12 +15,18 @@ app.set("views", "views");          // 2nd argument is a folder name
 app.set("view engine", "ejs");
 
 // 4 - Routing codes
-app.get("/hello", function(req, res) {
-    res.end(`<h1 style="background: red">HELLO WORLD by Andrew</h1>`);
+app.post("/create-item", (req, res) => {   // post() used to bring the data and write it to DB
+    console.log(req.body);
+    res.json({test: "success"});
 });
-app.get("/gift", function(req, res) {
-    res.end(`<h1>You are in gifts section</h1>`);
+
+app.get("/", function(req, res) {          // get() used to get (read) the data from DB
+    res.render("harid");
 });
+
+// app.get("/gift", function(req, res) {
+//     res.end(`<h1>You are in gifts section</h1>`);
+// });
 
 const server = http.createServer(app);
 let PORT = 3000;
