@@ -2,8 +2,18 @@ console.log("Start Web Server");
 const express = require('express');
 const app = express();
 const http = require("http");
+const fs = require("fs");
 
-// 1 - Intro codes: Codes that are related to the data coming to express 
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if(err) {
+        console.log("ERROR", err);
+    } else {
+        user = JSON.parse(data)
+    }
+});
+
+// 1 - Intro codes: Codes that are related to the data coming to express (Middleware)
 app.use(express.static("public"));                  // any requests from browser can only access this folder (CSS, images etc.)
 app.use(express.json());                            // will convert json data to an object data. We know the data between client and web server is in json format
 app.use(express.urlencoded({extended: true}));      // traditional request form. By writing this code our express will accept any post from html FORM
@@ -20,6 +30,10 @@ app.post("/create-item", (req, res) => {   // post() used to bring the data and 
     res.json({test: "success"});
 });
 
+app.get("/author", (req, res) => {
+    res.render("author", { user: user });
+});
+
 app.get("/", function(req, res) {          // get() used to get (read) the data from DB
     res.render("harid");
 });
@@ -33,3 +47,8 @@ let PORT = 3000;
 server.listen(PORT, function() {
     console.log(`The server is running successfully on port: ${PORT}`);
 });
+
+/* PATTERNS
+    1. Architectural Pattern        - MVC, Cache...
+    2. Design Pattern               - Middleware
+*/

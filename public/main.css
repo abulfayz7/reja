@@ -1,0 +1,270 @@
+* {
+    font-family: sans-serif;
+}
+
+.frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #e5e5e5;
+}
+
+.frame .main_frame {
+    position: relative;
+    width: 1440px;
+    height: 1312px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2px;
+    background: #9ef7fa;
+}
+
+.main_frame .left_frame {
+    position: relative;
+    width: 305px;
+    height: 1315px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_frame .midd_frame {
+    position: relative;
+    width: 970px;
+    height: 1259px;
+    margin-left: 30px;
+    margin-right: 27px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_frame .right_frame {
+    position: relative;
+    width: 108px;
+    height: 1315px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_frame .left_1 {
+    position: relative;
+    width: 228px;
+    height: auto;
+    margin-top: 50px;
+    margin-left: 37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_frame .left_1 .left_1_img {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 156.16px;
+    height: 142.53px;
+    margin-bottom: 29.46px;
+}
+
+.main_frame .left_1 .left_1_text1 {
+    position: relative;
+    width: 66.63px;
+    height: 20.9px;
+    margin-bottom: 6.65px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 123.6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    color: #2b2b2b;
+}
+
+.main_frame .left_1 .left_1_text2 {
+    position: relative;
+    width: 147.84px;
+    height: 25.65px;
+    margin-bottom: 6.65px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-feature-settings: 'calt' off, 'kern' off;
+    color: #767676;
+}
+
+.left_icons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 238px;
+    margin-top: 19px;
+    margin-bottom: 25px;
+}
+
+.link_href {
+    text-decoration: none;
+    color: black;
+}
+
+.icon {
+    position: relative;
+    width: 24.99px;
+    height: 22.8px;
+    border-radius: 50%;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    /* background: #ffb400; muammo chiqishi sabab comment qildim */
+}
+
+.icon-1 {
+    position: relative;
+    /* left: 29.17%;
+    right: 27.08%; 
+    margin-top: 5.86px; alignment muammosi bor */
+}
+
+.icon-2 {
+    position: relative;
+    margin-right: 15px;
+}
+
+.main_frame .marginer {
+    position: relative;
+    width: 220px;
+    height: 0px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 25px;
+    border: 1.5px solid #f0f0f6;
+}
+
+.main_frame .left_2 {
+    position: relative;
+    width: 221px;
+    height: 126px;
+    margin-left: 44px;
+}
+
+.left_2_1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.left_2_1_rect {
+    position: relative;
+    width: auto;
+    height: 24px;
+    align-items: center;
+    background: #ffb400;
+}
+
+.left_2_1_rect_text {
+    position: relative;
+    color: #2b2b2b;
+    /* font-family: Inter;  Inter font ishlamayapti */
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 7px 0 7px;
+}
+
+.left_title_text {
+    position: relative;
+    color: #2b2b2b;
+    /* font-family: Inter;  Inter font ishlamayapti */
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 124%;
+    margin-bottom: 10px;
+}
+
+.left_info_text {
+    position: relative;
+    color: #767676;
+    /* font-family: Inter;  Inter font ishlamayapti */
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.left_level {
+    position: relative;
+    width: 220px;
+    height: 4px;
+    margin-bottom: 6px;
+    border: 0.5px solid #FFB400;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left_level_fill {
+    position: relative;
+    width: 217px;
+    height: 2px;
+    background: #FFB400;
+    border-radius: 30px;
+}
+
+.main_frame .left_3 {
+    position: relative;
+    width: 221px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+
+.left_3_1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.main_frame .left_4 {
+    position: relative;
+    width: 220px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+
+.main_frame .left_5 {
+    position: relative;
+    width: 186px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+
+.left_5_1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6px;
+}
+
+
+
+/* "editor.hover.enabled": false, */
