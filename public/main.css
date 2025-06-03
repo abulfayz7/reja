@@ -123,6 +123,19 @@
     color: black;
 }
 
+.mid_link_href {
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffb400;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
 .icon {
     position: relative;
     width: 24.99px;
@@ -384,5 +397,6 @@
     position: relative;
     width: 68px;
     height: 68px;
+    margin-bottom: 26px;
 }
 /* "editor.hover.enabled": false, */
