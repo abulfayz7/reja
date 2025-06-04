@@ -19,8 +19,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 2px;
-    /* align-items: center; 
-    background: #9ef7fa;*/
+    /* align-items: center; tepadan joy qoldirayotgani uchun olib tashlandi */
 }
 
 .main_frame .left_frame {
@@ -279,6 +278,83 @@
     margin-bottom: 6px;
 }
 
+.mid_rnd_grn1 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 496px;
+    top: 46px;
+    border-radius: 50%;
+    border: 2px solid #05ff00;
+    box-sizing: border-box;
+}
+
+.mid_rnd_grn2 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 84px;
+    bottom: 19px;
+    border-radius: 50%;
+    border: 2px solid #05ff00;
+    box-sizing: border-box;
+}
+
+.mid_rnd_yllw1 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 36px;
+    top: 37px;
+    border-radius: 50%;
+    border: 2px solid #ffb400;
+    box-sizing: border-box;
+}
+
+.mid_rnd_yllw2 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 554px;
+    top: 378px;
+    border-radius: 50%;
+    border: 2px solid #ffb400;
+    box-sizing: border-box;
+}
+
+.mid_rct_blue {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 370px;
+    top: 330px;
+    transform: rotate(25deg);
+    border: 2px solid #0047ff;
+    box-sizing: border-box;
+}
+
+.mid_rct_yllw {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 892px;
+    top: 76px;
+    transform: rotate(25deg);
+    border: 2px solid #ffb400;
+    box-sizing: border-box;
+}
+
+.mid_trngl_red {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 917px;
+    top: 424px;
+    border-radius: 100px 10px 15px 20px;
+    border: 2px solid #ff2e00;
+    box-sizing: border-box;
+}
+
 .main_frame .midd_frame .mid_top {
     position: relative;
     width: 971px;
@@ -294,7 +370,6 @@
     height: 454px;
     display: flex;
     flex-direction: column;
-    background: white;
 }
 
 .main_frame .midd_frame .mid_top_c2 {
@@ -399,4 +474,32 @@
     height: 68px;
     margin-bottom: 26px;
 }
-/* "editor.hover.enabled": false, */
+
+.mode_icon {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin: 52px 0 215px 0;
+}
+
+.menu_icon_back {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 43px;
+    border-radius: 50%;
+    background: #f0f0f6;
+}
+
+.menu_icon_back:hover {
+    background: #ffb400;
+}
+
+.menu_icon {
+    width: 18px;
+    height: 18px;
+}
