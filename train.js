@@ -59,7 +59,7 @@ console.log("TRAIN AREA!");
 
 // console.log('passed here 0');
 
-// -------------------------- Call via then() and catch() --------------------------
+// -------------------------- Call via then() and catch() METHODS !!! these are METHODS!!! --------------------------
 // giveMeAdvice(25)
 //     .then((data) => {
 //         console.log('Advice:', data);
@@ -68,14 +68,23 @@ console.log("TRAIN AREA!");
 //         console.log('ERROR', err);
 //     });
 
-// ------------- Using asynchronous function and await in call part too -------------
+// *************************************************************************************************************************
+// ***---------- Using asynchronous function with ASYNC/AWAIT with try {} and catch(err){} operators in call part too ----------***
+// *************************************************************************************************************************
+
 // async function run() {
+//   try {
 //     let answer = await giveMeAdvice(25);
 //     console.log('Advice:', answer);
 //     answer = await giveMeAdvice(70);
 //     console.log('Advice:', answer);
+//     answer = await giveMeAdvice("41");
+//     console.log('Advice:', answer);
 //     answer = await giveMeAdvice(41);
 //     console.log('Advice:', answer);
+//   } catch (err) {
+//     console.log("Error:", err);
+//   }
 // }
 
 // run();
@@ -97,34 +106,75 @@ MASALAN countLetter("e", "engineer") 3ni return qiladi.
 
 masalani yechimi: */
 
-const countLetter = (letter, string) => {
+// const countLetter = (letter, string) => {
+//     let count = 0;
+//     for (const character of string) {
+//         if (character === letter) {
+//         count++;
+//         }
+//     }
+//     return count;
+// }
+
+// console.log("Letters in string:", countLetter("a", "andrew (abulfayz)"));
+
+
+// // Additional practice
+
+// const countLetterInArray = (letter, array) => {
+//     let countArr = 0;
+//     for (const ele of array) {
+//         for (const character of ele) {
+//             if (character === letter) {
+//                 countArr++;
+//             }
+//         }
+//     }
+//     return countArr;
+// }
+
+// const arr = ["andrew", "abulfayz", "async", "fullstack"];
+// console.log("Letters in Array:", countLetterInArray("a", arr));
+
+
+
+// NOTES from zoom lesson
+// DEFINE
+// function qoldiqliBolish(a, b, callback) {
+//   if (b === 0) {
+//     callback("Mahraj nolga teng bololmaydi", null, null);
+//   } else {
+//     callback(null, a % b, a / b);
+//   }
+// }
+
+// // CALL
+// qoldiqliBolish(10, 3, (err, data, data2) => {
+//   if (err) console.log("Error:", err);
+//   else {
+//     console.log("data:", data, "\ndata2:", data2);
+//   }
+// });
+
+
+
+
+
+
+// B-TASK: 
+
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+
+const countDigits = (string) => {
     let count = 0;
     for (const character of string) {
-        if (character === letter) {
+        if (character >= 0 && character <= 9) {     // if (typeof character == 'number') won't work. Find out why?
         count++;
         }
     }
     return count;
 }
 
-console.log("Letters in string:", countLetter("a", "andrew (abulfayz)"));
-
-
-// Additional practice
-
-const countLetterInArray = (letter, array) => {
-    let countArr = 0;
-    for (const ele of array) {
-        for (const character of ele) {
-            if (character === letter) {
-                countArr++;
-            }
-        }
-    }
-    return countArr;
-}
-
-const arr = ["andrew", "abulfayz", "async", "fullstack"];
-console.log("Letters in Array:", countLetterInArray("a", arr));
-
-
+console.log("Digits in string:", countDigits("ad2a54y79wet0sfgb9"));

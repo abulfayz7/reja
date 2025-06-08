@@ -35,7 +35,7 @@ app.get("/author", (req, res) => {
 });
 
 app.get("/", function(req, res) {          // get() used to get (read) the data from DB
-    res.render("harid");
+    res.render("reja");
 });
 
 // app.get("/gift", function(req, res) {
@@ -45,7 +45,7 @@ app.get("/", function(req, res) {          // get() used to get (read) the data 
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function() {
-    console.log(`The server is running successfully on port: ${PORT}`);
+    console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`);
 });
 
 /* PATTERNS
