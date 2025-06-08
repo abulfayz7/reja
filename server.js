@@ -1,54 +1,25 @@
-console.log("Start Web Server");
-const express = require('express');
-const app = express();
 const http = require("http");
-const fs = require("fs");
+const mongodb = require("mongodb");
 
-let user;
-fs.readFile("database/user.json", "utf8", (err, data) => {
-    if(err) {
-        console.log("ERROR", err);
-    } else {
-        user = JSON.parse(data)
+let db;
+const connectionString = "mongodb+srv://abulfayz7:YfUc9qkpjqNGdprH@cluster0.rjbcyy2.mongodb.net/Reja";
+
+mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
+    if (err) console.log("ERROR on connection MongoDB");
+    else {
+        console.log("MongoDB connection succed");
+        // console.log(client);  // This will show the client object
+        module.exports = client; // we will use client (Object that MongoDB returned) further
+        const app = require("./app");
+        const server = http.createServer(app);
+        let PORT = 3000;
+        server.listen(PORT, function() {
+            console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`);
+});
     }
 });
 
-// 1 - Intro codes: Codes that are related to the data coming to express (Middleware)
-app.use(express.static("public"));                  // any requests from browser can only access this folder (CSS, images etc.)
-app.use(express.json());                            // will convert json data to an object data. We know the data between client and web server is in json format
-app.use(express.urlencoded({extended: true}));      // traditional request form. By writing this code our express will accept any post from html FORM
 
 
-// 2 - Session codes
-// 3 - Views codes
-app.set("views", "views");          // 2nd argument is a folder name
-app.set("view engine", "ejs");
 
-// 4 - Routing codes
-app.post("/create-item", (req, res) => {   // post() used to bring the data and write it to DB
-    console.log(req.body);
-    res.json({test: "success"});
-});
 
-app.get("/author", (req, res) => {
-    res.render("author", { user: user });
-});
-
-app.get("/", function(req, res) {          // get() used to get (read) the data from DB
-    res.render("reja");
-});
-
-// app.get("/gift", function(req, res) {
-//     res.end(`<h1>You are in gifts section</h1>`);
-// });
-
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function() {
-    console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`);
-});
-
-/* PATTERNS
-    1. Architectural Pattern        - MVC, Cache...
-    2. Design Pattern               - Middleware
-*/
