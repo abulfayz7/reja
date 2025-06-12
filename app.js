@@ -1,8 +1,8 @@
 console.log("Start Web Server");
 const express = require('express');
 const app = express();
-
 const fs = require("fs");
+const mongodb = require("mongodb");
 
 // MongoDB call
 const db = require("./server").db();  // This will use db object from server.js file to read, write, delete data in our database
@@ -19,8 +19,8 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 // 1 - Intro codes: Codes that are related to the data coming to express (Middleware)
 app.use(express.static("public"));                  // any requests from browser can only access this folder (CSS, images etc.)
-app.use(express.json());                            // will convert json data to an object data. We know the data between client and web server is in json format
-app.use(express.urlencoded({extended: true}));      // traditional request form. By writing this code our express will accept any post from html FORM
+app.use(express.json());                            // will convert json data to an object data. We know the data between client and web server is in json format = Rest API
+app.use(express.urlencoded({extended: true}));      // traditional request form. By writing this code our express will accept any post from html FORM = Traditional API
 
 
 // 2 - Session codes
@@ -35,8 +35,9 @@ app.post("/create-item", (req, res) => {   // post() used to bring the data and 
     //res.json({test: "success"});
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-        console.log(data.ops);
+        //console.log(data.ops);
         res.json(data.ops[0]);
+        // res.redirect('/');   // from zoom
     //     if (err) {
     //     console.log("ERROR:", err);
     //     res.end("Oops! Something went wrong!");
@@ -44,6 +45,13 @@ app.post("/create-item", (req, res) => {   // post() used to bring the data and 
     //     res.end("Successfully added!"); 
     // }
 });
+});
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne({_id: new mongodb.ObjectID(id)}, (err, data) => {
+        res.json({state: "success"});
+    })
 });
 
 app.get("/author", (req, res) => {
@@ -68,7 +76,17 @@ app.get("/", function(req, res) {          // get() used to get (read) the data 
 module.exports = app;
 
 
-/* PATTERNS
-    1. Architectural Pattern        - MVC, Cache...
-    2. Design Pattern               - Middleware
+/*
+    FRONTEND USLUBIYATI => BSSR(EJS) vs SPA(REACT etc...)
+
+    PATTERNS (Qolip)
+    1. Architectural Pattern (Body Bone)                         - MVC, Cache...
+    2. Design Pattern  (Specific bone ex: hand bone)             - Middleware
 */
+
+/*  API (Application Programming Interface) Requests:
+    1) TYPE       => Traditional api | Rest api | GraphQL api
+    2) METHOD     => GET | POST 
+    3) STRUCTURE  => header | body
+
+*/ 

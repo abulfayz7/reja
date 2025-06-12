@@ -23,4 +23,23 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     });
 });
 
+// ALL OF ABOVE CODE CAN JUST BE DONE WITH 1 METHOD => res.redirect('/');
+
+document.addEventListener("click", function(e) {
+    // delete button operation
+    if (e.target.classList.contains("delete-me")) {
+        if(confirm("Are you sure you want to Delete?")) { // confirm() function is browser abstract func. It gives a window with OK or CANCEL buttons
+            axios.post("/delete-item", {id: e.target.getAttribute("data-id")}).then((res) => {
+                console.log(res.data);
+                e.target.parentElement.parentElement.remove();
+            }).catch((err) => {
+                console.log("Please try again!");
+            });
+    }
+}
+    // edit button operation
+    if (e.target.classList.contains("edit-me")) {
+        alert("You clicked Delete");
+    }
+});
 

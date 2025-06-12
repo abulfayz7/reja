@@ -1,4 +1,122 @@
 console.log("TRAIN AREA!");
+// --------------------------------------------------------------------------------------------------------------------------------------
+// C-TASK: 
+
+// Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+// MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+// MANUAL CHECKING WITHOUT ANY ARRAY METHODS
+const checkContent = (string1, string2) => {
+    if (string1.length !== string2.length) {
+        return false;
+    }
+
+    let count = 0;
+    let notFound = 0;
+    for (const character of string1) {              // check 1st string with 2nd string
+        for (const character2 of string2) {
+            if (character === character2) {
+                count++;
+            } else {
+                notFound++;
+                if (notFound >= string1.length) return false;
+            }
+        }
+        notFound = 0;
+    }
+    count = 0;
+    notFound = 0;
+
+    for (const character of string2) {              // check 2nd string with 1st string
+        for (const character2 of string1) {
+            if (character === character2) {
+                count++;
+            } else {
+                notFound++;
+                if (notFound >= string2.length) return false;
+            }
+        }
+        notFound = 0;
+    }
+
+    if (count >= string1.length && notFound < string1.length) {
+        return true;
+    } else {return false;}
+    
+}
+
+console.log(checkContent("mitgroup", "gmtiprou"));
+
+// FAST CHECKING WITH ARRAY METHODS
+const checkContent2 = (string1, string2) => {
+  return string1.split('').sort().join('') === string2.split('').sort().join('');
+};
+
+console.log(checkContent2("mitgroup", "gmtiprou"));
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+// B-TASK: 
+
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+
+// const countDigits = (string) => {
+//     let count = 0;
+//     for (const character of string) {
+//         if (character >= 0 && character <= 9) {     // if (typeof character == 'number') won't work. Find out why?
+//         count++;
+//         }
+//     }
+//     return count;
+// }
+
+// console.log("Digits in string:", countDigits("ad2a54y79wet0sfgb9"));
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+/* A-TASK
+
+ Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+MASALAN countLetter("e", "engineer") 3ni return qiladi.
+
+masalani yechimi: */
+
+// const countLetter = (letter, string) => {
+//     let count = 0;
+//     for (const character of string) {
+//         if (character === letter) {
+//         count++;
+//         }
+//     }
+//     return count;
+// }
+
+// console.log("Letters in string:", countLetter("a", "andrew (abulfayz)"));
+
+
+// // Additional practice
+
+// const countLetterInArray = (letter, array) => {
+//     let countArr = 0;
+//     for (const ele of array) {
+//         for (const character of ele) {
+//             if (character === letter) {
+//                 countArr++;
+//             }
+//         }
+//     }
+//     return countArr;
+// }
+
+// const arr = ["andrew", "abulfayz", "async", "fullstack"];
+// console.log("Letters in Array:", countLetterInArray("a", arr));
+
+
+
+
+
 // console.log("Jack Ma maslahatlari");
 // const list = [
 //     "yahshi talaba buling", // 0-20
@@ -92,52 +210,6 @@ console.log("TRAIN AREA!");
 // console.log('passed here 1'); 
 
 
-
-
-
-
-
-
-
-// A-TASK
-
-/* Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
-MASALAN countLetter("e", "engineer") 3ni return qiladi.
-
-masalani yechimi: */
-
-// const countLetter = (letter, string) => {
-//     let count = 0;
-//     for (const character of string) {
-//         if (character === letter) {
-//         count++;
-//         }
-//     }
-//     return count;
-// }
-
-// console.log("Letters in string:", countLetter("a", "andrew (abulfayz)"));
-
-
-// // Additional practice
-
-// const countLetterInArray = (letter, array) => {
-//     let countArr = 0;
-//     for (const ele of array) {
-//         for (const character of ele) {
-//             if (character === letter) {
-//                 countArr++;
-//             }
-//         }
-//     }
-//     return countArr;
-// }
-
-// const arr = ["andrew", "abulfayz", "async", "fullstack"];
-// console.log("Letters in Array:", countLetterInArray("a", arr));
-
-
-
 // NOTES from zoom lesson
 // DEFINE
 // function qoldiqliBolish(a, b, callback) {
@@ -155,26 +227,3 @@ masalani yechimi: */
 //     console.log("data:", data, "\ndata2:", data2);
 //   }
 // });
-
-
-
-
-
-
-// B-TASK: 
-
-// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
-// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
-
-
-const countDigits = (string) => {
-    let count = 0;
-    for (const character of string) {
-        if (character >= 0 && character <= 9) {     // if (typeof character == 'number') won't work. Find out why?
-        count++;
-        }
-    }
-    return count;
-}
-
-console.log("Digits in string:", countDigits("ad2a54y79wet0sfgb9"));
