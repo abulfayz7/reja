@@ -6,7 +6,7 @@ console.log("TRAIN AREA!");
 // MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 
 // MANUAL CHECKING WITHOUT ANY ARRAY METHODS
-const checkContent = (string1, string2) => {
+/* const checkContent = (string1, string2) => {
     if (string1.length !== string2.length) {
         return false;
     }
@@ -52,7 +52,8 @@ const checkContent2 = (string1, string2) => {
   return string1.split('').sort().join('') === string2.split('').sort().join('');
 };
 
-console.log(checkContent2("mitgroup", "gmtiprou"));
+console.log(checkContent2("mitgroup", "gmtiprou")); 
+*/
 
 
 // --------------------------------------------------------------------------------------------------------------------------------------
@@ -113,7 +114,7 @@ masalani yechimi: */
 // const arr = ["andrew", "abulfayz", "async", "fullstack"];
 // console.log("Letters in Array:", countLetterInArray("a", arr));
 
-
+// ------------------------------------------------- END of TAKSKS -------------------------------------------------------------------------------------
 
 
 
