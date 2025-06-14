@@ -8,6 +8,54 @@ console.log("TRAIN AREA!");
 
 const moment = require('moment');
 
+// ********* UPGRADED LOGIC *********
+class Shop {
+    #products = {};
+
+    constructor(non, lagmon, cola) {
+        this.#products = {
+            'non': non,
+            'lagmon': lagmon,
+            'cola': cola,
+        };
+    }
+
+    qoldiq() {
+        console.log(`Hozir ${moment().format('HH:mm')}da ${this.#products['non']}ta non, ${this.#products['lagmon']}ta lagmon va ${this.#products['cola']}ta cola mavjud!`);
+    }
+
+    sotish(input, amount) {
+        if (this.#products[input]) {
+            if (this.#products[input] >= amount) {
+                this.#products[input] -= amount;
+                console.log(`${amount}ta ${input} sotildi!`);
+            } else {
+                console.log(`Shopda ${input} yetarlicha emas!`);
+            }
+        } else {
+            console.log(`Shopda ${input} degan narsa yoq! Ma'lumotni togri kiriting!`);
+        }
+    }
+
+    qabul(input, amount) {
+        if (this.#products[input]) {
+            this.#products[input] += amount;
+            console.log(`${amount}ta ${input} qabul qilindi!`);
+        } else {
+            console.log(`Shopda ${input} degan narsa yoq! Ma'lumotni togri kiriting!`);
+        }
+    }
+    
+}
+
+const shop = new Shop(4, 5, 2);
+shop.qoldiq();
+shop.sotish('non', 3);
+shop.qabul('cola', 4);
+shop.qoldiq();
+
+// ********* INITIAL LOGIC *********
+/*
 class Shop {
     #non = 0;
     #lagmon = 0;
@@ -82,7 +130,7 @@ shop.qoldiq();
 shop.sotish('non', 3);
 shop.qabul('cola', 4);
 shop.qoldiq();
-
+*/
 
 // --------------------------------------------------------------------------------------------------------------------------------------
 // C-TASK: 
