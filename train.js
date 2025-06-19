@@ -1,16 +1,56 @@
 console.log("TRAIN AREA!");
 // --------------------------------------------------------------------------------------------------------------------------------------
+// F-TASK: 
+
+// Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
+// MASALAN: findDoublers("hello") return true return qiladi
+
+// ********* UPGRADED LOGIC *********
+const findDoublers = (string) => {
+    const arr = [];
+    for (const char of string) {
+        if (arr.includes(char)) {
+            console.log("Doublers:", char);
+            return true;
+        }
+        arr.push(char);
+    }
+    return false;
+}
+
+console.log(findDoublers("hello"));
+
+// ********* INITIAL LOGIC *********
+// const findDoublers = (string) => {
+//     let count = 0;
+//     for (const char of string) {
+//         for (const char2 of string) {
+//             if (char === char2) {
+//                 count++;
+//                 if (count >= 2) {
+//                     console.log("Doublers:", char);
+//                     return true;
+//                 }
+//             }
+//         }
+//         count = 0;
+//     }
+//     return false;
+// }
+
+// console.log(findDoublers("hello"));
+// --------------------------------------------------------------------------------------------------------------------------------------
 // TASK E
 
 // Shunday function tuzing, u bitta string argumentini qabul qilib,
 // qabul qilingan stringni teskari ko'rinishda return qilsin
 // MASALAN: getReverse("hello"); return qilsin "olleh"
 
-const getReverse = (string) => {
-    console.log(string.split('').reverse('').join(''));
-}
+// const getReverse = (string) => {
+//     console.log(string.split('').reverse('').join(''));
+// }
 
-getReverse("hello");
+// getReverse("hello");
 
 
 // --------------------------------------------------------------------------------------------------------------------------------------
