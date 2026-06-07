@@ -5,7 +5,6 @@ services:
     container_name: reja
     restart: always
     image: reja-image
-    build: 
     ports:
       - "3002:3000"
     volumes:
